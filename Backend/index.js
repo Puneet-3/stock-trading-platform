@@ -7,13 +7,10 @@ const cors = require("cors");
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
-const { HoldingsModel } = require("./model/HoldingsModel");
-
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 const User = require("./model/UserModel");
-
+const { HoldModel } = require("./model/HoldModel");
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
@@ -192,7 +189,7 @@ app.use(bodyParser.json());
 // });
 
 app.get("/allHoldings", async (req, res) => {
-  let allHoldings = await HoldingsModel.find({});
+  let allHoldings = await HoldModel.find({});
   res.json(allHoldings);
 });
 
@@ -255,6 +252,7 @@ mongoose
   .connect(uri)
   .then(() => {
     console.log("DB started!");
+
     app.listen(PORT, () => {
       console.log("App started on port " + PORT);
     });
