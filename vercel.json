@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci --ignore-scripts && npm --prefix frontend ci && npm --prefix dashboard ci",
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/index.js": { "maxDuration": 30 }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/dashboard/:path*", "destination": "/dashboard/index.html" },
+    { "source": "/:path*", "destination": "/index.html" }
+  ]
+}

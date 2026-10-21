@@ -1,0 +1,16 @@
+.git
+.agents
+.codex
+.aws
+.env*
+**/.env*
+**/node_modules/**
+**/node_modules
+**/node_modules.legacy/**
+**/node_modules.legacy
+**/build/**
+**/dist/**
+test-results
+playwright-report
+coverage
+tests

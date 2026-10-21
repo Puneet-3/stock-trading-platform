@@ -1,27 +1,40 @@
 {
-  "name": "backend",
+  "name": "paper-trading-platform",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev:api": "node --watch index.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:dashboard": "npm --prefix dashboard run dev",
+    "install:clients": "npm --prefix frontend ci && npm --prefix dashboard ci",
+    "build": "npm --prefix frontend run build && npm --prefix dashboard run build",
+    "build:vercel": "node scripts/build-vercel.js",
+    "test": "node --test tests/api.test.js",
+    "test:e2e": "playwright test",
+    "test:vercel": "node --test tests/vercel.test.js",
+    "format:check": "prettier --check Backend api scripts tests dashboard/src frontend/src playwright.config.js frontend/vite.config.js dashboard/vite.config.js vercel.json"
   },
   "author": "Puneet",
   "license": "ISC",
-  "description": "",
+  "description": "A local paper trading simulator with private portfolios and virtual funds.",
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "@playwright/test": "^1.64.1",
+    "mongodb-memory-server": "^11.3.0",
+    "prettier": "^3.9.10"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
-    "body-parser": "^2.2.2",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
     "jsonwebtoken": "^9.0.3",
-    "mongodb": "^7.2.0",
-    "mongoose": "^9.6.2",
-    "passport": "^0.7.0",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^9.0.1"
+    "mongoose": "^9.6.2"
+  },
+  "private": true,
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   }
 }

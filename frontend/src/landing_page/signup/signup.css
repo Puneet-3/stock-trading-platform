@@ -25,6 +25,7 @@
 }
 
 .signup-right {
+  flex-shrink: 0;
   width: 400px;
   background: white;
   padding: 35px;
@@ -40,6 +41,33 @@
 .signup-form {
   display: flex;
   flex-direction: column;
+}
+
+.signup-form label {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.signup-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+@media (max-width: 760px) {
+  .signup-container {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+  .signup-left {
+    padding: 20px 0;
+  }
+  .signup-left h1 {
+    font-size: 28px;
+  }
+  .signup-right {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+  }
 }
 
 .signup-form input {

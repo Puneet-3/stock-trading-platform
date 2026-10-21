@@ -1,0 +1,11 @@
+[
+  { "name": "INFY", "price": 1555.45, "change": -1.6 },
+  { "name": "ONGC", "price": 116.8, "change": -0.09 },
+  { "name": "TCS", "price": 3194.8, "change": -0.25 },
+  { "name": "KPITTECH", "price": 266.45, "change": 3.54 },
+  { "name": "QUICKHEAL", "price": 308.55, "change": -0.15 },
+  { "name": "WIPRO", "price": 577.75, "change": 0.32 },
+  { "name": "M&M", "price": 779.8, "change": -0.01 },
+  { "name": "RELIANCE", "price": 2112.4, "change": 1.44 },
+  { "name": "HUL", "price": 512.4, "change": 1.04 }
+]
